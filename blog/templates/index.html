@@ -1,0 +1,66 @@
+{% extends 'MyblogNav.html'%}
+        {% block content%}
+
+<main class="flex-grow">
+            <!-- Home Page -->
+            <section id="home-page" class="page page-transition py-10 px-4 sm:px-6 container mx-auto">
+                <div class="relative overflow-hidden rounded-xl mb-10 bg-primary/10 dark:bg-primary/5">
+                    <div class="md:flex md:items-center px-6 py-10 md:px-10 md:py-16">
+                        <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+                            <h1 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">Welcome to My
+                                Personal Blog</h1>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">A place where I share my thoughts,
+                                experiences, and creative journey.</p>
+                            <a href="#" onclick="navigateTo('blog'); return false;"
+                                class="inline-block bg-primary hover:bg-primary/90 text-white font-medium px-6 py-3 rounded-lg transition-colors">
+                                Read My Blog
+                            </a>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center">
+                            <div
+                                class="w-64 h-64 rounded-full bg-gradient-to-br from-primary to-secondary/60 flex items-center justify-center text-white text-8xl">
+                                <i class="fas fa-pen-fancy"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Recent Posts</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Featured Post -->
+                    
+
+                    <!-- Regular Posts -->
+                    {% for post in posts %}
+      
+          <div
+                        class="bg-white dark:bg-dark-card rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                        <img src="{{post.image.url}}" class="h-50 w-full">
+                         <div class="p-5">
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span
+                                    class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-medium rounded-full">
+                                    {{ post.category }}
+                                </span>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">{{ post.title }}</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-2">
+                                {{ post.caption }}
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-500 dark:text-gray-500">{{ post.published|date:"M d, Y" }}</span>
+                                        
+                                <a href="{% url 'post_detail' slug=post.slug %}" class="text-primary hover:underline text-sm">Read more →</a>
+                            </div>
+                        </div>
+                    </div>
+
+        
+      {% endfor %}
+    
+                </div>
+            </section>
+         
+      
+
+{%  endblock%}

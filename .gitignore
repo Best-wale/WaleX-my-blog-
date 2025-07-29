@@ -1,0 +1,13 @@
+
+images/
+
+media/
+# Ignore all files in the media directory
+migrations/
+# Ignore all migration files
+__pycache__/
+# Ignore Python cache files
+db.sqlite3
+
+
+env/

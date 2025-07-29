@@ -1,0 +1,49 @@
+{% extends 'MyblogNav.html'%}
+        {% block content%}
+        <section id="blog-page" class="page page-transition py-10 px-4 sm:px-6 container mx-auto">
+                <h1 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Blog</h1>
+
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-3/4">
+                        <div class="grid grid-cols-1 gap-8">
+                            <!-- Blog post 1 -->
+                            {% for post in posts%}
+                            <article
+                                class="bg-white dark:bg-dark-card rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                                <img src="{{post.image.url}}" class="h-64 w-full object-cover"/>
+                                <div class="p-6">
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <span
+                                            class="px-2 py-1 bg-primary/10 dark:bg-primary/20 text-primary text-xs font-medium rounded-full">
+                                            {{post.category}}
+                                        </span>
+                                        <span
+                                            class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-medium rounded-full">
+                                            Travel
+                                        </span>
+                                    </div>
+                                    
+                                    <h2 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">{{post.title}}</h2>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">{{post.caption}}</p>
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                                                <i class="fas fa-user"></i>
+                                            </div>
+                                            <span class="text-sm text-gray-600 dark:text-gray-400">{{post.author}}</span>
+                                        </div>
+                                        <span class="text-sm text-gray-500 dark:text-gray-500">{{ post.published|date:"M d, Y" }}</span>
+                                    </div>
+                                    <a href="{% url 'post_detail' slug=post.slug %}" 
+                                        class="mt-4 inline-block text-primary hover:underline">Read more →</a>
+                                </div>
+                            </article>
+                            {% endfor%}
+
+                            
+                </div>
+            </section>
+
+
+{%  endblock%}
