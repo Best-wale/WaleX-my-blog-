@@ -44,7 +44,7 @@ To run WaleX Blog locally:
    ```
 
 4. **Access the app:**  
-   Open [http://localhost:3000](http://localhost:3000) or the configured local server URL.
+   Open [http://127.0.0.1:8000](http://127.0.0.1:8000) or the configured local server URL.
 
 ---
 
