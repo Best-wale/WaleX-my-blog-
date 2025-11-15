@@ -59,20 +59,6 @@ To run WaleX Blog locally:
 
 ---
 
-## Folder Structure
-
-```
-WaleX-my-blog-/
-├── public/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   └── ...
-├── package.json
-└── README.md
-```
-
 ---
 
 ## Contributing
