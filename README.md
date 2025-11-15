@@ -52,10 +52,9 @@ To run WaleX Blog locally:
 
 - **Frontend:** *(Html,Css,Javascript)*
 - **Backend:** *( Django)*
-- **Database:** *(e.g., MongoDB, PostgreSQL)*
-- **Styling:** *(e.g., Tailwind CSS, Bootstrap, Pure CSS)*
+- **Database:** *( PostgreSQL)*
+- **Styling:** *(Tailwind CSS)*
 
-*(Replace the above with your actual stack if different.)*
 
 ---
 
